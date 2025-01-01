@@ -1,23 +1,37 @@
-<body>
-    <!-- update the header -->
-    <h1>Edit <%= food.name %></h1>
-   <!-- updated form -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit <%= food.name %></title>
+  </head>
+  <body>
 
-<form action="/foods/<%=food._id%>?_method=PUT" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" name="name" value="<%= fruit.name %>" />
-
-  
-    <label for="isReadyToEat">Ready to Eat?</label>
-    <input type="checkbox" name="isReadyToEat" id="isReadyToEat" />
+     <h1>Editing <%= food.name %>!</h1>
 
 
+    <form action="/foods/<%= food._id %>?_method=PUT" method="POST">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        value="<%= food.name %>"
+        />
 
+      <label for="isReadyToEat">Ready to Eat?</label>
+      <input
+        type="checkbox"
+        name="isReadyToEat"
+        id="isReadyToEat"
+        <% if(food.isReadyToEat){ %>
+          checked
+        <% } %>
+        />
 
+      <button type="submit">Edit <%= food.name%></button>
+    </form>
 
-    <button type="submit">Update Food</button>
-  </form>
-  
-    <a href="/foods">Back to Foods</a>
+    <a href="/foods/<%= food._id %>">Back to <%= food.name %></a>
   </body>
-  
+</html>

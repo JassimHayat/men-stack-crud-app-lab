@@ -18,7 +18,7 @@ app.get("/", async (req, res) => {
 app.get("/foods/new", (req, res) => {
   res.render("foods/new.ejs");
 });
-app.get("/foods/:fruitId", async (req, res) => {
+app.get("/foods/:foodId", async (req, res) => {
   const foodId = req.params.foodId;
   const food = await Food.findById(foodId);
   res.render("foods/show.ejs", { food: food });
