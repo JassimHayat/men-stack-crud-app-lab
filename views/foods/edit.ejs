@@ -29,9 +29,15 @@
         <% } %>
         />
 
-      <button type="submit">Edit <%= food.name%></button>
-    </form>
+        <button type="submit">Edit <%= food.name%></button>
+      </form>
+  
+      <a href="/foods/<%= food._id %>">Back to <%= food.name %></a>
+   
+    
 
-    <a href="/foods/<%= food._id %>">Back to <%= food.name %></a>
   </body>
 </html>
+
+
+
