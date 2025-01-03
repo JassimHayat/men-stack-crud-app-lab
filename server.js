@@ -36,7 +36,7 @@ app.get("/foods/:foodId/edit", async (req, res) => {
   });
 });
 
-app.put('/foods/;foodId', async (req, res) => {
+app.put('/foods/:foodId', async (req, res) => {
 
   if (req.body.isReadyToEat === 'on') {
     req.body.isReadyToEat = true;
